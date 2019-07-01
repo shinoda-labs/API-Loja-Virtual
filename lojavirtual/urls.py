@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from categoria.api.viewsets import CategoriaViewSet
+from produto.api.viewsets import ProdutoViewSet
 
 routers = routers.DefaultRouter(trailing_slash=False)
 routers.register(r'api/v1/categoria', CategoriaViewSet, base_name='Categoria')
+routers.register(r'api/v1/produto', ProdutoViewSet, base_name='Produto')
 
 urlpatterns = [
     path('', include(routers.urls)),

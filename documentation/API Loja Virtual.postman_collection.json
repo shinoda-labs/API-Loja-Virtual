@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "00ffcecb-4da8-456a-b5a5-1cfcb9372136",
+		"_postman_id": "3f8948b3-3d0d-4c95-8498-1a70bc03fe59",
 		"name": "API Loja Virtual",
 		"description": "API de uma loja virtual de equipamentos para computador",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -78,6 +78,184 @@
 							]
 						},
 						"description": "Deleta uma categoria"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "GET - Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produto",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Produtos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Fonte Corsair 1200W 80 Plus Platinum Modular HX1200",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Especificações: - Eficiência de platina 80 PLUS, fornecendo 90% de eficiência energética em condições de carga do mundo real. - Modo ZeroR",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "1453.25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/produto",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Produtos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Produtos (ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/ativar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"ativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Produtos (inativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/inativar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"inativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Produtos (aprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/aprovar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"aprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Produtos (reprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/reprovar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"reprovar"
+							]
+						}
 					},
 					"response": []
 				}
