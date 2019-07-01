@@ -32,7 +32,7 @@ class ProdutoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            if flag is False:
+            if flag:
                 raise ValidationError({'error': 'O produto {} já está aprovado.'.format(id)})
             else:
                 raise ValidationError({'error': 'Produto inexistente'})
@@ -52,7 +52,7 @@ class ProdutoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            if flag is False:
+            if flag:
                 raise ValidationError({'error': 'O produto {} já está reprovado.'.format(id)})
             else:
                 raise ValidationError({'error': 'Produto inexistente'})
@@ -72,7 +72,7 @@ class ProdutoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            if flag is False:
+            if flag:
                 raise ValidationError({'error': 'O produto {} já está ativo.'.format(id)})
             else:
                 raise ValidationError({'error': 'Produto inexistente'})
@@ -92,7 +92,7 @@ class ProdutoAdmSerializer(ModelSerializer):
 
                 return serializer.data
         except Exception as e:
-            if flag is False:
+            if flag:
                 raise ValidationError({'error': 'O produto {} já está inativo.'.format(id)})
             else:
                 raise ValidationError({'error': 'Produto inexistente'})
