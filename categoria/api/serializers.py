@@ -36,7 +36,7 @@ class CategoriaAdmSerializer(ModelSerializer):
                 return serializer.data
         except Exception as e:
             if flag:
-                raise ValidationError({'error': 'A Categoria {} já está aprovada.'.format(id)})
+                raise ValidationError({'error': 'A categoria {} já está aprovada.'.format(id)})
             else:
                 raise ValidationError({'error': 'Categoria inexistente'})
 
@@ -56,7 +56,7 @@ class CategoriaAdmSerializer(ModelSerializer):
                 return serializer.data
         except Exception as e:
             if flag:
-                raise ValidationError({'error': 'A Categoria {} já está reprovada.'.format(id)})
+                raise ValidationError({'error': 'A categoria {} já está reprovada.'.format(id)})
             else:
                 raise ValidationError({'error': 'Categoria inexistente'})
 
@@ -76,7 +76,7 @@ class CategoriaAdmSerializer(ModelSerializer):
                 return serializer.data
         except Exception as e:
             if flag:
-                raise ValidationError({'error': 'A Categoria {} já está ativa.'.format(id)})
+                raise ValidationError({'error': 'A categoria {} já está ativa.'.format(id)})
             else:
                 raise ValidationError({'error': 'Categoria inexistente'})
 
@@ -96,6 +96,6 @@ class CategoriaAdmSerializer(ModelSerializer):
                 return serializer.data
         except Exception as e:
             if flag:
-                raise ValidationError({'error': 'A Categoria {} já está inativa.'.format(id)})
+                raise ValidationError({'error': 'A categoria {} já está inativa.'.format(id)})
             else:
                 raise ValidationError({'error': 'Categoria inexistente'})

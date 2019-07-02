@@ -19,4 +19,4 @@ class Produto(models.Model):
     database = 'db_loja_virtual'
 
     def __str__(self):
-        return self.titulo
+        return '{} - {}'.format(self.id, self.titulo)

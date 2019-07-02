@@ -80,6 +80,98 @@
 						"description": "Deleta uma categoria"
 					},
 					"response": []
+				},
+				{
+					"name": "PATCH - Categorias (ativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/ativar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"ativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categorias (inativar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/categoria/1/inativar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categoria",
+								"1",
+								"inativar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categorias (aprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/1/aprovar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"1",
+								"aprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Categorias (reprovar)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/categoria/1/reprovar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categoria",
+								"1",
+								"reprovar"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
