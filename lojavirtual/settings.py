@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/2.2/ref/settings/
+    https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'categoria',
     'produto',
 ]
+
+REST_FRAMEWORK = {
+    # Paginação por páginas
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # Paginação por Offset
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 30,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

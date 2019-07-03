@@ -8,6 +8,7 @@ from rest_framework.response import Response
 class ProdutoViewSet(ModelViewSet):
     http_method_names = ['get', 'patch', 'delete', 'post']
     serializer_class = ProdutoSerializer
+    filter_fields = ['categoria', ]
 
     def get_queryset(self):
         return Produto.objects.filter(aprovado=True, ativo=True).order_by('titulo')

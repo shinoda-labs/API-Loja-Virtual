@@ -28,6 +28,25 @@
 					"response": []
 				},
 				{
+					"name": "GET - Categorias (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categoria/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categoria",
+								"3"
+							]
+						},
+						"description": "Retorna todas as categorias"
+					},
+					"response": []
+				},
+				{
 					"name": "POST - Categoria",
 					"request": {
 						"method": "POST",
@@ -91,12 +110,12 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{base_url}}/produto/1/ativar",
+							"raw": "{{base_url}}/categoria/1/ativar",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"produto",
+								"categoria",
 								"1",
 								"ativar"
 							]
@@ -137,12 +156,12 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{base_url}}/produto/1/aprovar",
+							"raw": "{{base_url}}/categoria/1/aprovar",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"produto",
+								"categoria",
 								"1",
 								"aprovar"
 							]
@@ -172,6 +191,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "PATCH - Categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Teste5555",
+									"type": "text"
+								},
+								{
+									"key": "icone",
+									"value": "https://www.google.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/categoria/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categoria",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -190,6 +249,24 @@
 							],
 							"path": [
 								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Produtos (ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produto/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"3"
 							]
 						}
 					},
@@ -346,6 +423,49 @@
 								"produto",
 								"1",
 								"reprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Produto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Fonte Corsair 1300W 80 Plus Platinum Modular HX1200",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Especificações: - Eficiência de platina 80 PLUS, fornecendo 90% de eficiência energética em condições de carga do mundo real. - Modo Zero",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "1547.25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/produto/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produto",
+								"3"
 							]
 						}
 					},
