@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from produto.models import Produto
+from categoria.models import Categoria
 from produto.api.serializers import ProdutoSerializer, ProdutoAdmSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -12,6 +13,15 @@ class ProdutoViewSet(ModelViewSet):
 
     def get_queryset(self):
         return Produto.objects.filter(aprovado=True, ativo=True).order_by('titulo')
+
+    def create(self, request, *args, **kwargs):
+        produto = ProdutoSerializer().insere(request.data)
+        return Response(data=produto, status=200)
+
+    def partial_update(self, request, *args, **kwargs):
+        produto = ProdutoSerializer().atualiza(id=kwargs['pk'], data=request.data)
+
+        return Response(data=produto, status=200)
 
     @action(methods=['patch'], detail=True)
     def aprovar(self, request, pk):

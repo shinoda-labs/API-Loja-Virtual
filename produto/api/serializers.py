@@ -1,15 +1,46 @@
 from rest_framework.serializers import ModelSerializer, ValidationError
+
+from categoria.models import Categoria
 from produto.models import Produto
-from categoria.api.serializers import CategoriaProdutoSerializer
 
 
 class ProdutoSerializer(ModelSerializer):
-    categoria = CategoriaProdutoSerializer()
 
     class Meta:
         model = Produto
         fields = ('id', 'titulo', 'categoria', 'descricao', 'preco')
         ordering = ['titulo', ]
+
+    def insere(self, data):
+        try:
+            serializer = ProdutoSerializer(titulo=data['titulo'],
+                                           categoria=int(data['categoria']),
+                                           descricao=data['descricao'],
+                                           preco=float(data['preco']))
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return serializer.data
+        except Exception as e:
+            raise ValidationError({'error': e})
+
+    def atualiza(self, id, data):
+        try:
+            produto = Produto.objects.get(pk=id)
+
+            categoria = Categoria.objects.get(id=data['categoria'])
+
+            serializer = ProdutoSerializer(produto, data={
+                'titulo': data['titulo'],
+                'categoria': int(data['categoria']),
+                'descricao': data['descricao'],
+                'preco': float(data['preco'])},
+                partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+
+            return serializer.data
+        except Exception as e:
+            raise ValidationError({'error': e})
 
 
 class ProdutoAdmSerializer(ModelSerializer):

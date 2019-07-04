@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer, ValidationError
 from categoria.models import Categoria
+from rest_flex_fields import FlexFieldsModelSerializer
 
 
 class CategoriaSerializer(ModelSerializer):
@@ -9,7 +10,7 @@ class CategoriaSerializer(ModelSerializer):
         ordering = ['titulo', ]
 
 
-class CategoriaProdutoSerializer(ModelSerializer):
+class CategoriaNestedSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Categoria
         fields = ('titulo',)

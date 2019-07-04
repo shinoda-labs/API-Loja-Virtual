@@ -8,7 +8,8 @@ class Produto(models.Model):
 
     id = models.AutoField(primary_key=True, editable=False, auto_created=True)
     titulo = models.CharField(max_length=100)
-    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
+    # categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
+    categoria = models.IntegerField()
     descricao = models.TextField(max_length=255)
     preco = models.FloatField()
     criado = models.DateTimeField(auto_now_add=True)
@@ -20,3 +21,5 @@ class Produto(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.id, self.titulo)
+
+

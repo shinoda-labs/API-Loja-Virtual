@@ -8,3 +8,4 @@ pytz==2019.1
 sqlparse==0.3.0
 static3==0.7.0
 mysqlclient==1.4.2
+drf-flex-fields==0.2.2
